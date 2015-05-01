@@ -8,6 +8,42 @@ import java.io.Serializable;
 public class SearchItem implements Serializable{
     String itemid;
     String title;
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public boolean isReturn_accepted() {
+        return return_accepted;
+    }
+
+    double price;
+
+    public SearchItem(String itemid, String title, String globalId, String primaryCat, String gallURL, String itemUrl, String payment, String autopay, String location, String country, String shoppinginfo, String sellingStatus, String listinginfo, boolean return_accepted, String condition, String isMulti, String topRated,double pr) {
+        this.itemid = itemid;
+        this.title = title;
+        this.globalId = globalId;
+        this.primaryCat = primaryCat;
+        this.gallURL = gallURL;
+        this.itemUrl = itemUrl;
+        this.payment = payment;
+        this.autopay = autopay;
+        this.location = location;
+        this.country = country;
+        this.shoppinginfo = shoppinginfo;
+        this.sellingStatus = sellingStatus;
+        this.listinginfo = listinginfo;
+        this.return_accepted = return_accepted;
+        this.condition = condition;
+        this.isMulti = isMulti;
+        this.topRated = topRated;
+        this.price=pr;
+    }
+
     String globalId;
     String primaryCat;
     String gallURL;
@@ -19,7 +55,7 @@ public class SearchItem implements Serializable{
     String shoppinginfo;
     String sellingStatus;
     String listinginfo;
-    String return_accepted;
+    boolean return_accepted;
     String condition;
     String isMulti;
     String topRated;
@@ -128,11 +164,11 @@ public class SearchItem implements Serializable{
         this.listinginfo = listinginfo;
     }
 
-    public String getReturn_accepted() {
+    public boolean getReturn_accepted() {
         return return_accepted;
     }
 
-    public void setReturn_accepted(String return_accepted) {
+    public void setReturn_accepted(boolean return_accepted) {
         this.return_accepted = return_accepted;
     }
 

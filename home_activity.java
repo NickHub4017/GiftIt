@@ -46,7 +46,7 @@ public class home_activity extends Activity {
             @Override
             public void onClick(View view) {
                 String keyword =keyword_inp.getText().toString();
-                String url_to_get_data = "http://svcs.ebay.com/services/search/FindingService/v1?SECURITY-APPNAME=NithilaV-788f-4035-8c4f-c3327868468c&OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&RESPONSE-DATA-FORMAT=JSON&callback=_cb_findItemsByKeywords&REST-PAYLOAD&keywords="+keyword+"&paginationInput.entriesPerPage=3";
+                String url_to_get_data = "http://svcs.ebay.com/services/search/FindingService/v1?SECURITY-APPNAME=NithilaV-788f-4035-8c4f-c3327868468c&OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&RESPONSE-DATA-FORMAT=JSON&callback=_cb_findItemsByKeywords&REST-PAYLOAD&keywords="+keyword+"&paginationInput.entriesPerPage=10";
                 new HttpAsyncTask().execute(url_to_get_data);
 
 
@@ -88,7 +88,7 @@ public class home_activity extends Activity {
         // onPostExecute displays the results of the AsyncTask.
         @Override
         protected void onPostExecute(String result) {
-            Toast.makeText(getBaseContext(), result, Toast.LENGTH_LONG).show();
+            //Toast.makeText(getBaseContext(), result, Toast.LENGTH_LONG).show();
             Budget_inp.setText(result);
             Intent pref_int=new Intent(home_activity.this,preferred_activity.class);
             pref_int.putExtra("Json_data",result);
